@@ -12,6 +12,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^12.16.0",
+    "cypress-xpath": "^2.0.1",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6"
   },
@@ -19,4 +20,3 @@
     "stepDefinitions": "cypress/support/step_definitions/**/*.js"
   }
 }
-

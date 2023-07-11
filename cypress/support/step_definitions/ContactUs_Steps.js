@@ -50,18 +50,18 @@ When ('I type a specific comment {string} and a number {int} within the comment 
     
 })
 
-When ('I type a first name {word} and a last name {string}', (firstName,lastName)) => {
-    cy.get('[name="first_name"]').type(firstname);
-    cy.get('[name="last_name"]').type(lastname);
+When ('I type a first name {word} and a last name {string}', (firstName,lastName) => {
+    cy.get('[name="first_name"]').type(firstName);
+    cy.get('[name="last_name"]').type(lastName);
 })
 
-When ('I type a email address {string} and a comment {string}', (email,comment)) => {
-    cy.get('[name="email"]').type(email);
+When ('I type a email address {string} and a comment {string}', (emailAddress,comment) => {
+    cy.get('[name="email"]').type(emailAddress);
     cy.get('textarea[name=message]').type(comment);
 })
 
-When ('I should be presented with header text {string}', (message)) => {
-
+When ('I should be presented with header text {string}', (message) => {
+    cy.xpath("//h1 | //body").contains(message);
     
 })
 
