@@ -1,3 +1,4 @@
+@login @regression
 Feature: WebdriverUniversity - Login Page
 
     Scenario Outline: Validate valid & invalid login credentials
@@ -9,7 +10,8 @@ Feature: WebdriverUniversity - Login Page
         Then I should be presented with a alert box which contains text '<expectedAlertText>'
 
         Examples:
-            | username  | password     | expectedAlertText     |
+            | username  | password     | expectedAlertText    |
             | webdriver | webdriver123 | validation succeeded |
             | webdriver | 123          | validation failed    |
+
 

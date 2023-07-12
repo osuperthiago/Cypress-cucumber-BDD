@@ -4,7 +4,16 @@
   "description": "Cypress Cucumber Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "full-regression-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/*.feature'",
+    "full-regression-headedless-chrome": "cypress run --browser chrome --spec 'cypress/e2e/*.feature'",
+    "contact-us-tests-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/Contact-Us.feature'",
+    "contact-us-tests-headed": "cypress run -e TAGS=\"@contact-us\" --headed",
+    "contact-us-tests-headless": "cypress run -e TAGS=\"@contact-us\"",
+    "login-tests-headed": "cypress run -e TAGS=\"@login\" --headed",
+    "login-and-smoke-pack": "cypress run -e TAGS=\"@login or @smoke\" --headed",
+    "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\" --headed",
+    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed"
   },
   "author": "Thiago Torres osuperthiago@gmail.com",
   "license": "ISC",
@@ -17,6 +26,14 @@
     "typescript": "^5.1.6"
   },
   "cypress-cucumber-preprocessor": {
-    "stepDefinitions": "cypress/support/step_definitions/**/*.js"
+    "stepDefinitions": "cypress/support/step_definitions/**/*.js",
+    "html":{
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    },
+    "messages":{
+      "enabled": true,
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"      
+    }
   }
 }
