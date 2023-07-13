@@ -22,18 +22,24 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^12.16.0",
     "cypress-xpath": "^2.0.1",
+    "multiple-cucumber-html-reporter": "^3.4.0",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/support/step_definitions/**/*.js",
-    "html":{
+    "html": {
       "enabled": true,
       "output": "cypress/reports/cucumber-html/cucumber-report.html"
     },
-    "messages":{
+    "messages": {
       "enabled": true,
-      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"      
+      "output": "cypress/reports/cucumber-ndjson/cucumber-report.ndjson"
+    },
+    "json": {
+      "enabled": true,
+      "formatter": "cucumber-json-formatter",
+      "output": "cypress/reports/cucumber-json/cucumber-report.json"
     }
   }
 }
