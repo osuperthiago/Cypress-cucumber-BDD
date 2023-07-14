@@ -10,10 +10,10 @@
     "contact-us-tests-headed-chrome": "cypress run --headed --browser chrome --spec 'cypress/e2e/Contact-Us.feature'",
     "contact-us-tests-headed": "cypress run -e TAGS=\"@contact-us\" --headed",
     "contact-us-tests-headless": "cypress run -e TAGS=\"@contact-us\"",
-    "login-tests-headed": "cypress run -e TAGS=\"@login\" --headed",
+    "login-tests-headed": "cypress run -e TAGS=\"@login\" --headed && node cucumber-html-report.js",
     "login-and-smoke-pack": "cypress run -e TAGS=\"@login or @smoke\" --headed",
     "smoke-pack-headed": "cypress run -e TAGS=\"@smoke\" --headed",
-    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed"
+    "regression-pack-headed": "cypress run -e TAGS=\"@regression and not @smoke\" --headed && node cucumber-html-report.js"
   },
   "author": "Thiago Torres osuperthiago@gmail.com",
   "license": "ISC",
@@ -21,6 +21,7 @@
     "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "cypress": "^12.16.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^3.4.0",
     "ts-loader": "^9.4.4",
