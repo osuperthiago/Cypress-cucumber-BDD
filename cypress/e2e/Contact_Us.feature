@@ -6,7 +6,6 @@ Feature: WebdriverUniversity - Contact Us Page
         Given I navigate to the webdriveruniversity homepage
         When I click on contact us button
 
-
     Scenario: Valid Contact Us Form Submission
         And I type a first name
         And I type a last name
